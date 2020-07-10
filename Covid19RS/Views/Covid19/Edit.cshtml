@@ -1,0 +1,74 @@
+﻿@model Covid19RS.Models.Covid19
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Edit</h2>
+
+<h4>Covid19</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="UkupanBrRegSlucajeva" class="control-label"></label>
+                <input asp-for="UkupanBrRegSlucajeva" class="form-control" />
+                <span asp-validation-for="UkupanBrRegSlucajeva" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BrojSmrtnihSlucajeva" class="control-label"></label>
+                <input asp-for="BrojSmrtnihSlucajeva" class="form-control" />
+                <span asp-validation-for="BrojSmrtnihSlucajeva" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProcenatSmrtnosti" class="control-label"></label>
+                <input asp-for="ProcenatSmrtnosti" class="form-control" />
+                <span asp-validation-for="ProcenatSmrtnosti" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BrojTestiranihOsoba" class="control-label"></label>
+                <input asp-for="BrojTestiranihOsoba" class="form-control" />
+                <span asp-validation-for="BrojTestiranihOsoba" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BrojTestiranihOsoba24h" class="control-label"></label>
+                <input asp-for="BrojTestiranihOsoba24h" class="form-control" />
+                <span asp-validation-for="BrojTestiranihOsoba24h" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BrojPotvrdjenihSlucajeva24h" class="control-label"></label>
+                <input asp-for="BrojPotvrdjenihSlucajeva24h" class="form-control" />
+                <span asp-validation-for="BrojPotvrdjenihSlucajeva24h" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BrojPreminulihosoba24h" class="control-label"></label>
+                <input asp-for="BrojPreminulihosoba24h" class="form-control" />
+                <span asp-validation-for="BrojPreminulihosoba24h" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BrojAktivnihSlucajeva" class="control-label"></label>
+                <input asp-for="BrojAktivnihSlucajeva" class="form-control" />
+                <span asp-validation-for="BrojAktivnihSlucajeva" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BrojOsobaNaRespiratorima" class="control-label"></label>
+                <input asp-for="BrojOsobaNaRespiratorima" class="form-control" />
+                <span asp-validation-for="BrojOsobaNaRespiratorima" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

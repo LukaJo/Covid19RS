@@ -1,0 +1,96 @@
+﻿@model List<string>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="typewriter">
+    <div class="typewriter-text">Serbian Daily Statistics (source: covid19.rs)</div>
+</div>
+
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th>
+                UkupanBrRegSlucajeva
+            </th>
+            <th>
+                BrojSmrtnihSlucajeva
+            </th>
+            <th>
+                ProcenatSmrtnosti
+            </th>
+            <th>
+                BrojTestiranihOsoba
+            </th>
+            <th>
+                BrojTestiranihOsoba24h
+            </th>
+            <th>
+                BrojPotvrdjenihSlucajeva24h
+            </th>
+            <th>
+                BrojPreminulihosoba24h
+            </th>
+            <th>
+                BrojAktivnihSlucajeva
+            </th>
+            <th>
+                BrojOsobaNaRespiratorima
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                <div class="well well-large">
+                    @Model[9]
+                </div>
+                
+            </td>
+            <td>
+                <div class="well well-large">
+                    @Model[11]
+                </div>
+            </td>
+            <td>
+                <div class="well well-large">
+                    @Model[13]
+                </div>
+            </td>
+            <td>
+                <div class="well well-large">
+                    @Model[15]
+                </div>
+            </td>
+            <td>
+                <div class="well well-large">
+                    @Model[17]
+                </div>
+            </td>
+            <td>
+                <div class="well well-large">
+                    @Model[19]
+                </div>
+            </td>
+            <td>
+                <div class="well well-large">
+                    @Model[21]
+                </div>
+            </td>
+            <td>
+                <div class="well well-large">
+                    @Model[23]
+                </div>
+            </td>
+            <td>
+                <div class="well well-large">
+                    @Model[25]
+                </div>
+            </td>
+
+        </tr>
+
+    </tbody>
+</table>

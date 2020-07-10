@@ -1,0 +1,75 @@
+﻿@model Rootobject
+
+@{
+    ViewData["Title"] = "Global";
+}
+
+<h2>Global Covid19 Statistics (source: api.covid19api.com)</h2>
+
+<table class="table table-striped" id="example" style="width:100%">
+    <thead class="thead-dark">
+        <tr>
+            <th>
+                Zemlja
+            </th>
+            <th>
+                ZemljaKod
+            </th>
+            <th>
+                Novozarazenih
+            </th>
+            <th>
+                UkupnoRegistrovanih
+            </th>
+            <th>
+               Novopreminulih
+            </th>
+            <th>
+                UkupnoPreminulih
+            </th>
+            <th>
+                NovoOporavljenih
+            </th>
+            <th>
+                UkupnoOporavljenih
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Countries)
+{
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Zemlja)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ZemljaKod)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Novozarazenih)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UkupnoRegistrovanih)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Novopreminulih)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UkupnoPreminulih)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NovoOporavljenih)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UkupnoOporavljenih)
+            </td>
+
+        </tr>
+}
+    </tbody>
+</table>
+
+
+
+
