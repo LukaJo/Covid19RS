@@ -24,6 +24,19 @@ namespace Covid19RS.Controllers
         // GET: Covid19
         public async Task<IActionResult> Index()
         {
+            ////test za polovne automobile
+            //HttpClient client = new HttpClient();
+            //var response = await client.GetAsync("https://www.polovniautomobili.com/auto-oglasi/pretraga?page=2&sort=basic&price_to=4300&year_from=2008&city_distance=0&showOldNew=all&without_price=1&mileage_to=150000&gearbox%5B0%5D=251");
+            //var pageContents = await response.Content.ReadAsStringAsync();
+
+            //HtmlDocument pageDocument = new HtmlDocument();
+            //pageDocument.LoadHtml(pageContents);
+
+            //var listNazivModela = pageDocument.DocumentNode.SelectNodes("//*//div/article/h2/span//a").Select(t => t.InnerText).ToList();
+            //var listOpisModela = pageDocument.DocumentNode.SelectNodes("//*//div/article/div/div/div/div/div/div//div").Select(t => t.InnerText).ToList();
+            //var listCenaModela = pageDocument.DocumentNode.SelectNodes("//*//div/article/h2/span//span").Select(t => t.InnerText).ToList();
+            //var listSlikaModela = pageDocument.DocumentNode.SelectNodes("//*//div/article/div/div/a/figure//img").Select(t => t.Attributes["src"].Value).ToList();
+
             HttpClient client = new HttpClient();
             var response = await client.GetAsync("https://covid19.rs/");
             var pageContents = await response.Content.ReadAsStringAsync();
@@ -31,7 +44,7 @@ namespace Covid19RS.Controllers
             HtmlDocument pageDocument = new HtmlDocument();
             pageDocument.LoadHtml(pageContents);
 
-            var listCovid19Serbia = pageDocument.DocumentNode.SelectNodes("(//div[contains(@class,'elementor-widget-container')]//p)").Select(t=>t.InnerText).ToList();
+            var listCovid19Serbia = pageDocument.DocumentNode.SelectNodes("(//div[contains(@class,'elementor-widget-container')]//p)").Select(t => t.InnerText).ToList();
 
             return View(listCovid19Serbia);
         }
